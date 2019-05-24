@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://github.com/kiegroup/drools/kie-dmn/_3B4C3BB6-6032-4065-8C27-74379B366AA8" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_A0ECA2DB-B8BD-4A2D-8160-2A4FFFC4D21E" name="IssueTimeResolution" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://github.com/kiegroup/drools/kie-dmn/_3B4C3BB6-6032-4065-8C27-74379B366AA8">
+  <dmn:extensionElements/>
+  <dmn:decision id="_08453BDD-3117-41B6-95E2-C6BFDA72BB67" name="issueTimeResolution">
+    <dmn:variable id="_67FFCFBB-37D8-47F6-A9B9-BB6BBF326933" name="issueTimeResolution" typeRef="number"/>
+    <dmn:informationRequirement id="_4F19A0A9-5D7B-47BB-8165-A10DF65D8787">
+      <dmn:requiredInput href="#_B513167A-8D10-46E8-8710-E5DDD37FDAF7"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_C1BD0869-846C-4170-A2E0-DA2913E5D032" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_19D0D785-92E1-476F-BF02-9D0D9FF747C3">
+        <dmn:inputExpression id="_80B560AD-9A6C-47CA-9F5B-C233E898286F" typeRef="number">
+          <dmn:text>time</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_598D4E5E-F8EF-4F17-9441-41B6475D3C90" typeRef="number"/>
+      <dmn:rule id="_EA8D2A4D-76D4-4E51-9E14-BAFBBC1E7ACA">
+        <dmn:description>Sends the issue to staff to resolve</dmn:description>
+        <dmn:inputEntry id="_75EFABFE-EDD4-4D8C-AC9D-79519EFBD124">
+          <dmn:text>&lt;0.5</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_5560CEFC-9CCC-4798-8805-5FAD9B044B1B">
+          <dmn:text>1</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="_24C7261C-5FD6-4852-9DFB-32CC412D5CA8">
+        <dmn:description>Sends the issue to management to evaluate importance and/or plan</dmn:description>
+        <dmn:inputEntry id="_A09C074C-6676-486F-88C1-4806E7B9E024">
+          <dmn:text>&gt;=0.5</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_59C8B46B-5771-4974-B3E1-A80D2A4D522B">
+          <dmn:text>2</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmn:inputData id="_B513167A-8D10-46E8-8710-E5DDD37FDAF7" name="time">
+    <dmn:variable id="_1A289683-FB80-4217-A085-E76ECEB176AC" name="time"/>
+  </dmn:inputData>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_C1BD0869-846C-4170-A2E0-DA2913E5D032">
+            <kie:width>50.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>448.0</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-_08453BDD-3117-41B6-95E2-C6BFDA72BB67" dmnElementRef="_08453BDD-3117-41B6-95E2-C6BFDA72BB67" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="455" y="106" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_B513167A-8D10-46E8-8710-E5DDD37FDAF7" dmnElementRef="_B513167A-8D10-46E8-8710-E5DDD37FDAF7" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="420" y="208" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-_4F19A0A9-5D7B-47BB-8165-A10DF65D8787" dmnElementRef="_4F19A0A9-5D7B-47BB-8165-A10DF65D8787">
+        <di:waypoint x="520" y="233"/>
+        <di:waypoint x="455" y="131"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>

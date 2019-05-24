@@ -1,0 +1,1 @@
+{"id":"221314d2-bedc-49b1-bbe9-70e9dfb06202","name":"Task2Q-taskform.frm","model":{"taskName":"Task2Q","processId":"hotel-1.ComplaintHandling","properties":[],"formModelType":"org.kie.workbench.common.forms.jbpm.model.authoring.task.TaskFormModel"},"fields":[],"layoutTemplate":{"version":2,"style":"FLUID","layoutProperties":{},"rows":[]}}
